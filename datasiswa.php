@@ -9,7 +9,7 @@ include 'header.php';
 	</div>
 	<a class="btn btn-success " href="tambahSW.php">TAMBAH DATA</a>
 	<br /> <br>
-	<table class="table table-bordered table-striped">
+	<table class="table  table-striped" rules="all">
 		<tr>
 			<th>NO</th>
 			<th>KELAS</th>

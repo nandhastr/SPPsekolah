@@ -31,19 +31,13 @@ if (!isset($_SESSION['login'])) {
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
   <style>
-    .navwar {
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8) !important;
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      /* z-index: 9999 !important; */
+    /* kombinasi warna utk web ini 
+Kode Warna : #69d2e7, #a7dbd8, #e0e4cc, #f38630, #fa6900
+*/
 
-    }
 
-    .text {
-      font-size: 14px;
-      margin: 2px;
+    body {
+      background-color: #e0e4cc;
     }
 
     .nav-item {
@@ -51,9 +45,11 @@ if (!isset($_SESSION['login'])) {
 
     }
 
-    .text {
+    .nav {
+      margin: 2px;
       font-size: 14px !important;
-      background-color: #316879 !important;
+      background-color: #69d2e7 !important;
+      box-shadow: 2px 9px 5px rgba(0, 0, 0, 0.5);
     }
   </style>
 </head>
@@ -62,8 +58,10 @@ if (!isset($_SESSION['login'])) {
 <body>
 
   <!-- Fixed navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text">
-    <a class="text " href="./">Aplikasi Pembayaran SPP</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav text-light">
+    <center>
+      <h2><b>Aplikasi Pembayaran SPP</b></h2>
+    </center>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -74,6 +72,9 @@ if (!isset($_SESSION['login'])) {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="dataadmin.php">DATA ADMIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="datasiswa.php">DATA SISWA</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="dataguru.php">DATA GURU</a>

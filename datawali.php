@@ -14,7 +14,7 @@ include 'header.php';
 		<h2> DATA WALI KELAS </h2>
 	</div>
 	<a class="btn btn-success " href="tambahWL.php">TAMBAH DATA</a>
-	<table class="table table-bordered table-striped">
+	<table class="table  table-striped" rules="all">
 		<tr>
 			<th>NO</th>
 			<th>KELAS</th>
