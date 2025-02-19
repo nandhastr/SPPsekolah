@@ -40,10 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`idadmin`, `username`, `password`, `namalengkap`) VALUES
-(1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'muhammad zaki '),
-(3, 'operator', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'ria'),
-(4, 'operator', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'babe supriadi'),
-(5, NULL, '4b583376b2767b923c3e1da60d10de59', NULL);
+(1, 'admin', 'c0a1e89b1fe69a4678d3553471898a0df2bc60df', 'Nanda'),
+(2, 'operator', '$2y$10$6pXqTK0q.9xw3LZgc1yrs.dJk/TViS/FwRs1AB10z1pE8qdU7lBMG', 'nizar')
 
 -- --------------------------------------------------------
 

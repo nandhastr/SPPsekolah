@@ -1,37 +1,40 @@
 <?php
+
 session_start();
 if (isset($_SESSION['login'])) {
 	header('Location: index.php');
 }
 include 'koneksi.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$user  = $_POST['username'];
-	$pass  = $_POST['password'];
-	$p     = hash('sha1', $pass);
+	$user = trim($_POST['username']);
+	$pass = trim($_POST['password']);
 
-	if ($user == "" || $p == "") {
-		$error = true;
+	if ($user == "" || $pass == "") {
+		echo "Username atau password kosong!";
 	} else {
-		$data = $konek->query("SELECT * FROM admin WHERE username ='" . $user . "' AND password = '" . $p . "'");
-		$dt = mysqli_num_rows($data);
-		$dta = mysqli_fetch_Assoc($data);
+		$data = $konek->query("SELECT * FROM admin WHERE username = '$user'");
+		$dta = mysqli_fetch_assoc($data);
 
-		if ($dt > 0) {
-			session_start();
-			$_SESSION['login']    = TRUE;
-			$_SESSION['username'] = $dta['username'];
-			$_SESSION['id']		  = $dta['idadmin'];
-			header('Location: index.php');
+		if ($dta) {
+			echo "Password di Database: " . $dta['password'] . "<br>";
+
+			if (password_verify($pass, $dta['password'])) {
+				echo "✅ Password cocok!";
+				$_SESSION['login'] = TRUE;
+				$_SESSION['username'] = $dta['username'];
+				$_SESSION['id'] = $dta['idadmin'];
+				header('Location: index.php');
+				exit();
+			} else {
+				echo "❌ Password tidak cocok!";
+			}
 		} else {
-			echo "
-		<script>
-		alert('username atau password anda salah');
-		document.location.href = 'login.php';
-		</script>
-		";
+			echo "❌ Username tidak ditemukan!";
 		}
 	}
 }
+
 
 ?>
 
